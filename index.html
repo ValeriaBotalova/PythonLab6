@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить водителя</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <h1>Форма для добавления водителей</h1>
+    <form action="/cgi-bin/add_drivers.py" method="post">
+        <label for="name">Имя:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        
+        <label for="license">Номер лицензии:</label><br>
+        <input type="text" id="license" name="license" required><br>
+        
+        <label for="birth_day">Дата рождения (YYYY-MM-DD):</label><br>
+        <input type="date" id="birth_day" name="birth_day" required><br>
+        
+        <label for="experience">Стаж:</label><br>
+        <input type="number" id="experience" name="experience" required><br><br>
+        
+        <input type="submit" value="Добавить">
+    </form>
+    
+    <br>
+    <h2>Посмотреть список водителей</h2>
+    <a href="/cgi-bin/list_drivers.py"><button>Список водителей</button></a>
+</body>
+</html>
