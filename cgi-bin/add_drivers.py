@@ -1,24 +1,23 @@
 #!/usr/bin/env python3
+
 import cgi
 import sqlite3
-import html
 
 print("Content-type: text/html\n")
 
 form = cgi.FieldStorage()
-name = html.escape(form.getvalue('name', ''))
-license = html.escape(form.getvalue('license', ''))
-birth_day = html.escape(form.getvalue('birth_day', ''))
-experience = form.getvalue('experience', 0)
+
+name = form.getvalue('name')
+license_number = form.getvalue('license')
+birth_day = form.getvalue('birth_day')
+experiance = form.getvalue('experiance')
 
 connection = sqlite3.connect('transport.db')
 cursor = connection.cursor()
+        
 cursor.execute('INSERT INTO Drivers (name, license, birth_day, experiance) VALUES (?, ?, ?, ?)',
-               (name, license, birth_day, experience))
-connection.commit()
-connection.close()
-
-print("<html><body>")
-print("<h1>Данные добавлены!</h1>")
+                       (name, license_number, birth_day, experiance))
+connection.commit()    
+print("<h3>Водитель добавлен успешно!</h3>")
 print("<a href='/'>Назад</a>")
-print("</body></html>")
+connection.close()

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import sqlite3
 
 print("Content-type: text/html\n")
@@ -17,6 +19,8 @@ for driver in drivers:
 print("</table>")
 
 connection.close()
+
+print("<a href=''>Обновить</a>")
 print("<a href='/'>Назад</a>")
 print("</body></html>")
 

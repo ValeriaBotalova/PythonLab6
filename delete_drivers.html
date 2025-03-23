@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Удаление водителя</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <h1>Удаление водителя</h1>
+    <form action="/cgi-bin/delete_drivers.py" method="POST">
+        <h2>Укажите ID водителя для удаления </h2>
+        <label for="id">ID:</label>
+        <input type="number" id="id" name="id" required><br><br>
+
+        <input type="submit" value="Удалить водителя">
+    </form>
+</body>
+</html>
